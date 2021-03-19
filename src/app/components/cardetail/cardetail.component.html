@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="md-6">
+    <Ul class="list-group">
+      <li class="list-group-item" 
+          *ngFor="let image of images"
+          click="imageview(image)"
+          >
+        <img
+          src="https://localhost:44327/Images/{{
+            image.imagePath | slice: 55:200
+          }}"
+          width="180"
+          height="100"
+          alt="{{ image.imagePath | slice: 55:200 }}"
+        />
+      </li>
+    </Ul>
+  </div>
+  <div class="md-6">
+    <ul class="list-group">
+      <li class="list-group-item" 
+          *ngFor="let car of cars"
+          >  
+         <ul class="list-group">
+           <li>Brand       : {{ [car.brandName] }} </li>
+           <li>Description : {{ [car.description] }} </li>
+           <li>Daily Price : {{ [car.dailyPrice]  }} </li>
+         </ul>
+      </li>
+    </ul>
+    <img
+    src="https://localhost:44327/Images/{{
+      images[0].imagePath | slice: 55:200
+    }}"
+    width="360"
+    height="200"
+    alt="{{ images[0].imagePath | slice: 55:200 }}"
+  />
+  </div>
+</div>
