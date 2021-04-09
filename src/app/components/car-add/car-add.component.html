@@ -1,0 +1,162 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Car Add</h5>
+        <div class="card-body">
+          <form [formGroup]="carAddForm">
+            <div class="mb-3">
+              <label for="name">Car Name</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  formControlName="name"
+                  class="form-control"
+                  placeholder="Car Name"
+                />
+              </div>
+              <div *ngIf="carAddForm.controls['name'].invalid 
+                        && (carAddForm.controls['name'].dirty ||
+                         carAddForm.controls['name'].touched)" 
+                         class="alert alert-danger">
+                      Name is required.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="description">Description</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="description"
+                  formControlName="description"
+                  class="form-control"
+                  placeholder="Description"
+                />
+              </div> 
+              <div *ngIf="carAddForm.controls['description'].invalid 
+                    && (carAddForm.controls['description'].dirty ||
+                    carAddForm.controls['description'].touched)" 
+                    class="alert alert-danger">
+                    Description is required.
+             </div>
+            </div>
+            <div class="mb-3">
+              <label for="colorId">Color Id</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="colorId"
+                  formControlName="colorId"
+                  class="form-control"
+                  placeholder="Color Id"
+                />
+              </div>
+              <div *ngIf="carAddForm.controls['colorId'].invalid 
+              && (carAddForm.controls['colorId'].dirty ||
+              carAddForm.controls['colorId'].touched)" 
+              class="alert alert-danger">
+              ColorId is required.
+       </div>
+            </div>
+            <div class="mb-3">
+              <label for="colorName">Color Name</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="colorName"
+                  formControlName="colorName"
+                  class="form-control"
+                  placeholder="Color Name"
+                />
+              </div>
+              <div *ngIf="carAddForm.controls['colorName'].invalid 
+                 && (carAddForm.controls['colorName'].dirty ||
+                 carAddForm.controls['colorName'].touched)" 
+                 class="alert alert-danger">
+                 Color Name is required.
+             </div>
+            </div>
+            <div class="mb-3">
+              <label for="brandId">Brand Id</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="brandId"
+                  formControlName="brandId"
+                  class="form-control"
+                  placeholder="Brand Id"
+                />
+              </div> 
+              <div *ngIf="carAddForm.controls['brandId'].invalid 
+                   && (carAddForm.controls['brandId'].dirty ||
+                   carAddForm.controls['brandId'].touched)" 
+                   class="alert alert-danger">
+                   Brand Id is required.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="brandName">Brand Name</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="brandName"
+                  formControlName="brandName"
+                  class="form-control"
+                  placeholder="Brand Name"
+                />
+              </div>
+              <div *ngIf="carAddForm.controls['brandName'].invalid 
+                  && (carAddForm.controls['brandName'].dirty ||
+                  carAddForm.controls['brandName'].touched)" 
+                  class="alert alert-danger">
+                  Brand Name is required.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="modelYear">Model Year</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="modelYear"
+                  formControlName="modelYear"
+                  class="form-control"
+                  placeholder="model Year"
+                />
+              </div>
+              <div *ngIf="carAddForm.controls['modelYear'].invalid 
+                   && (carAddForm.controls['modelYear'].dirty ||
+                   carAddForm.controls['modelYear'].touched)" 
+                   class="alert alert-danger">
+                   Model Year is required.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="dailyPrice">Daily Price</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="dailyPrice"
+                  formControlName="dailyPrice"
+                  class="form-control"
+                  placeholder="Daily Price"
+                />
+              </div>
+              <div *ngIf="carAddForm.controls['dailyPrice'].invalid 
+                   && (carAddForm.controls['dailyPrice'].dirty ||
+                   carAddForm.controls['dailyPrice'].touched)" 
+                   class="alert alert-danger">
+                   Daily Price is required.
+              </div>
+            </div>
+          </form>
+          <p>Form value: {{ carAddForm.value | json }}</p>
+          <p>Form status: {{ carAddForm.status | json }}</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-fill btn-primary" (click)="add()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
